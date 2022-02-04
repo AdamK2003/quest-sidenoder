@@ -905,7 +905,7 @@ async function appInfo(args) {
       data.url = `https://store.steampowered.com/app/${data.id}/`;
 
       const resp = await fetch(`https://store.steampowered.com/api/appdetails?appids=${data.id}`, {
-        headers: { 'Accept-Language': global.locale + ',ru;q=0.8,en-US;q=0.5,en;q=0.3' },
+        headers: { 'Accept-Language': global.locale + ',en-US;q=0.5,en;q=0.3' },
       });
       const json = await resp.json();
       // console.log({ json });
@@ -927,7 +927,7 @@ async function appInfo(args) {
         method: 'POST',
         body: `access_token=OC|1317831034909742|&variables={"itemId":"${oculus.id}","first":1}&doc_id=5373392672732392`,
         headers: {
-          'Accept-Language': global.locale + ',ru;q=0.8,en-US;q=0.5,en;q=0.3',
+          'Accept-Language': global.locale + ',en-US;q=0.5,en;q=0.3',
           'Content-Type': 'application/x-www-form-urlencoded',
           'Origin': 'https://www.oculus.com',
         },
@@ -1016,7 +1016,7 @@ async function appInfo(args) {
         method: 'POST',
         body: JSON.stringify({ apps_id: data.id }),
         headers: {
-          'Accept-Language': global.locale + ',ru;q=0.8,en-US;q=0.5,en;q=0.3',
+          'Accept-Language': global.locale + ',en-US;q=0.5,en;q=0.3',
           'Content-Type': 'application/json',
           'Origin': 'https://sidequestvr.com',
           'Cookie': ' __stripe_mid=829427af-c8dd-47d1-a857-1dc73c95b947201218; cf_clearance=LkOSetFAXEs255r2rAMVK_hm_I0lawkUfJAedj1nkD0-1633288577-0-250; __stripe_sid=6e94bd6b-19a4-4c34-98d5-1dc46423dd2e2f3688',
@@ -1081,7 +1081,7 @@ async function appInfoEvents(args) {
       data.url = `https://store.steampowered.com/news/app/${steam.id}/`;
 
       const resp = await fetch(`http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002?appid=${steam.id}`, {
-        headers: { 'Accept-Language': global.locale + ',ru;q=0.8,en-US;q=0.5,en;q=0.3' },
+        headers: { 'Accept-Language': global.locale + ',en-US;q=0.5,en;q=0.3' },
       });
       const json = await resp.json();
       // console.log({ json });
@@ -1123,7 +1123,7 @@ async function appInfoEvents(args) {
         method: 'POST',
         body: `access_token=OC|1317831034909742|&variables={"id":"${oculus.id}"}&doc_id=1586217024733717`,
         headers: {
-          'Accept-Language': global.locale + ',ru;q=0.8,en-US;q=0.5,en;q=0.3',
+          'Accept-Language': global.locale + ',en-US;q=0.5,en;q=0.3',
           'Content-Type': 'application/x-www-form-urlencoded',
           'Origin': 'https://www.oculus.com',
         },
@@ -1194,7 +1194,7 @@ async function appInfoEvents(args) {
           method: 'POST',
           body: JSON.stringify({ apps_id: sq.id, is_news }),
           headers: {
-            'Accept-Language': global.locale + ',ru;q=0.8,en-US;q=0.5,en;q=0.3',
+            'Accept-Language': global.locale + ',en-US;q=0.5,en;q=0.3',
             'Content-Type': 'application/json',
             'Origin': 'https://sidequestvr.com',
             'Cookie': ' __stripe_mid=829427af-c8dd-47d1-a857-1dc73c95b947201218; cf_clearance=LkOSetFAXEs255r2rAMVK_hm_I0lawkUfJAedj1nkD0-1633288577-0-250; __stripe_sid=6e94bd6b-19a4-4c34-98d5-1dc46423dd2e2f3688',
