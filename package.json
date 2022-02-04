@@ -20,7 +20,8 @@
     "electron-builder": "^22.9.1"
   },
   "scripts": {
-    "start": "electron ./ --dev",
+    "start": "electron ./",
+    "start-dev": "electron ./ --dev",
     "pack": "electron-builder --dir",
     "dist": "electron-builder -mwl",
     "dist-win": "electron-builder -w",
