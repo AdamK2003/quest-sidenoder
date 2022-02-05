@@ -32,6 +32,7 @@ jobs:
           sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install wine
           sudo npm install electron-packager -g
           electron-packager ./ sidenoder --platform=win32 --arch=x64 --icon=build/icon.png
+          ls
 
           sudo ls /home/runner/work/quest-sidenoder/quest-sidenoder/
           sudo ls /home/runner/work/quest-sidenoder/quest-sidenoder/sidenoder-win32-x64/
