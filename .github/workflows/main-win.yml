@@ -37,9 +37,9 @@ jobs:
           echo ---
           ls sidenoder-win32-x64/
 
-          sudo cp /home/runner/work/quest-sidenoder/quest-sidenoder/windows-install.bat /home/runner/work/quest-sidenoder/quest-sidenoder/sidenoder-win32-x64/windows-install.bat
+          #sudo cp /home/runner/work/quest-sidenoder/quest-sidenoder/windows-install.bat /home/runner/work/quest-sidenoder/quest-sidenoder/sidenoder-win32-x64/windows-install.bat
           cd /home/runner/work/quest-sidenoder/quest-sidenoder/sidenoder-win32-x64/
-          mkdir -p /tmp/builds/win32/x64/
+          #mkdir -p /tmp/builds/win32/x64/
           zip -r /tmp/builds/win32/x64/sidenoder-win32-x64.zip *
 
 
