@@ -1239,7 +1239,7 @@ async function checkMount(attempt = 0) {
   try {
     attempt++;
 
-    if (!(await fsp.readdir(global.mountFolder)).length && attempt < 15) {
+    if (!(await fsp.readdir(global.mountFolder)).length && attempt < 30) {
       return new Promise((res, rej) => {
         setTimeout(() => {
           checkMount(attempt).then(res).catch(rej);
@@ -2098,6 +2098,7 @@ async function sideloadFolder(arg) {
 
       const tmpFolder = path.join(global.tmpdir, packageName);
       if (fromremote) {
+        await fsp.rmdir(tmpFolder);
         await fsp.mkdir(tmpFolder, { recursive: true });
       }
 
