@@ -377,7 +377,8 @@ async function changeAppConfig(package, key, val) {
     let config = await readAppCfg(package);
     try {
         config = Object.assign(config, {
-            [key]: val });
+            [key]: val
+        });
         adbShell(`echo '${JSON.stringify(config)}' > "/sdcard/Android/data/${package}/private/config.json"`);
         config = await readAppCfg(package);
         res.val = config && config[key];
@@ -1242,7 +1243,8 @@ async function checkMount(attempt = 0) {
     try {
         attempt++;
 
-        if (!(await fsp.readdir(global.mountFolder)).length && attempt < 30) {
+        if (!(await fsp.exists(global.mountFolder)) && attempt < 30) {
+            //fsp.mkdir(global.mountFolder, { recursive: true });
             return new Promise((res, rej) => {
                 setTimeout(() => {
                     checkMount(attempt).then(res).catch(rej);
@@ -2073,7 +2075,7 @@ async function sideloadFolder(arg) {
 
             const tmpFolder = path.join(global.tmpdir, packageName);
             if (fromremote) {
-                await fsp.rmdir(tmpFolder);
+                await fsp.rmdir(tmpFolder, { recursive: true, force: true });
                 await fsp.mkdir(tmpFolder, { recursive: true });
             }
 
