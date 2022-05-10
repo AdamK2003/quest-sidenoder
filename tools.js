@@ -2075,7 +2075,7 @@ async function sideloadFolder(arg) {
 
             const tmpFolder = path.join(global.tmpdir, packageName);
             if (fromremote) {
-                await fsp.rmdir(tmpFolder, { recursive: true, force: true });
+                //await fsp.rmdir(tmpFolder, { recursive: true, force: true });
                 await fsp.mkdir(tmpFolder, { recursive: true });
             }
 
