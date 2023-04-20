@@ -9,6 +9,7 @@ let upDir = () => getDir();
 
 ipcRenderer.on('get_dir', (event, arg) => {
   console.log('get_dir msg came: ', arg.path, arg.list.length);
+  //console.log(arg);
   if (arg.success) {
     setLocation(arg.path);
     loadDir(arg.list);
