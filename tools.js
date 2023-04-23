@@ -1535,14 +1535,14 @@ async function getDir(folder) {
         let gameListName = false;
         try {
             // throw 'test';
-            for (const name of GAME_LIST_NAMES) {
+            for (const name of GAME_LIST_NAMES) { // it's trying to find the game list
                 if (!fs.existsSync(path.join(folder, name))) continue;
                 // if (!files.includes(name)) continue;
                 gameListName = name;
                 break;
             }
 
-            if (gameListName) {
+            if (gameListName) { // we can keep this and override the entries in the individual game folders
                 const list = (await fsp.readFile(path.join(folder, gameListName), 'utf8')).split('\n');
                 let listVer;
                 if (!list.length) throw gameListName + ' is empty';
