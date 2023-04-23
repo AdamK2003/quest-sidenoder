@@ -18,8 +18,8 @@
     "web-auto-extractor": "1.0.17"
   },
   "devDependencies": {
-    "electron": "17.1.1",
-    "electron-builder": "22.9.1"
+    "electron": "24.1.2",
+    "electron-builder": "23.6.0"
   },
   "scripts": {
     "start": "electron ./",
